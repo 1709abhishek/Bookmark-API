@@ -15,6 +15,8 @@ const homeController = require('../controllers/homeController');
 router.post('/upload-csv', upload.single('file'), homeController.upload);
 
 router.get('/show-all', homeController.show);
+
+router.get('/show/:id', homeController.select);
   
 
 

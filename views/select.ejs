@@ -1,0 +1,48 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CSV</title>
+</head>
+<body>
+    <% if (fileRows != null && fileRows.length > 0) { %>
+        <form class="m-5" method="POST" action="/search">
+          <input name="searchTerm" type="text" id="search_box" placeholder="search ">
+          <input id="filterBtn" type="submit" text="Search" class="btn btn-primary" class="ml-1">
+        </form>
+    <table class="table table-danger">
+        <thead>
+          <tr>
+            <% fileRows[0].forEach(element => { %>
+              <th> 
+                <a href="/sort ">
+                  <%- element.toUpperCase()  %> <i class="fa fa-sort"></i>
+                </a>
+              </th>
+            <% }) %>
+          </tr>
+        </thead>
+        <tbody>
+            <% for( let index = 0; index < fileRows.length; index++ ) { %>
+              <tr>
+              <% for( let j = 0; j < fileRows[index].length; j++ ) { %>
+                <td> 
+                  <%- fileRows[index][j]  %> 
+                </td>
+              <% } %>
+            </tr>
+            <% } %>
+          
+        </tbody>
+      </table>
+    <% } %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/utilities.js"></script>
+</body>
+</html>

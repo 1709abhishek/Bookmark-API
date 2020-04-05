@@ -1,1 +1,7 @@
-<a href="<%= Files.filename %>">click here</a>
+<ul>
+    <% for( let index = 0; index < Files.length; index++ ) { %>
+      <a href="/<%- Files[index].filename %>">
+        <li><%- Files[index].filename %> </li>
+      </a>
+    <% } %>
+  </ul>

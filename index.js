@@ -17,6 +17,10 @@ app.use(bodyParser.json());
 app.use('/tmp',express.static(__dirname + '/tmp'));
 
 
+//set up the view engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
 //requiring the routes
 
 app.use('/', require('./api/routes'));
