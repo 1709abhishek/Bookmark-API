@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const multer = require('multer');
 const mongoose = require('mongoose');
 const db = require('./config/mongoose');
-
+const csv = require('fast-csv');
+const upload = multer({ dest: 'tmp/csv/' });
 
 const bodyParser = require('body-parser');
 
@@ -13,8 +15,8 @@ app.use(bodyParser.json());
 
 
 //requiring the routes
-app.use('/', require('./api/routes'));
 
+app.use('/', require('./api/routes'));
 //running the express server
 app.listen(port, function(err){
     if(err){
