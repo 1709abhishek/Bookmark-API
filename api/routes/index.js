@@ -10,22 +10,11 @@ const router = express.Router();
 
 const fs = require('fs');
 
+const homeController = require('../controllers/homeController');
 
+router.post('/upload-csv', upload.single('file'), homeController.upload);
 
-router.post('/upload-csv', upload.single('file'), function (req, res) {
-    const fileRows = [];
-  
-    // open uploaded file
-    csv.parseFile(req.file.path)
-      .on("data", function (data) {
-        fileRows.push(data); // push each row
-      })
-      .on("end", function () {
-        console.log(fileRows)
-        fs.unlinkSync(req.file.path);   // remove temp file
-        //process "fileRows" and respond
-      })
-  });
+router.get('/show-all', homeController.show);
   
 
 

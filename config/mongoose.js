@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 // mongoose instance connection url connection
-mongoose.connect('mongodb://localhost/polling_API-development');
+mongoose.connect('mongodb://localhost/Bookmark-API-development');
 
 const db = mongoose.connection;
 
