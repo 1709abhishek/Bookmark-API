@@ -1,6 +1,6 @@
 const csv = require('fast-csv');
 const multer = require('multer');
-const BASE_URL = "/Users/1709abhishek/Desktop/nodews/Bookmark-API/"
+const DIR_NAME = "/Users/1709abhishek/Desktop/nodews/Bookmark-API/"
 const Files = require('../models/Files');
 const path = require('path');
 var storage = multer.diskStorage({
@@ -60,7 +60,7 @@ module.exports.select = async function(req,res){
     try {
         const fileRows = [];
         let file = await Files.findById(req.params.id);
-        let url = BASE_URL + file.filename;
+        let url = DIR_NAME + file.filename;
         csv.parseFile(url)
         .on("data", function (data) {
             fileRows.push(data); // push each row
@@ -71,7 +71,8 @@ module.exports.select = async function(req,res){
             //process "fileRows" and respond
             return res.render('select', {
                 title: "selected file",
-                fileRows: fileRows
+                fileRows: fileRows,
+                url: url
             });
         });
     } catch (err) {
@@ -81,3 +82,24 @@ module.exports.select = async function(req,res){
         });
     }
 }
+
+module.exports.search = async function(req,res){
+
+    let searchTerm = req.body.searchTerm;
+    searchTerm = searchTerm.toLowerCase();
+    console.log("Search term: ", searchTerm);
+    ans = [];
+    if (fileRows != null) {
+        fileRows.forEach(item => {
+            let str = item[keys[1]];
+            str = str.toLowerCase();
+            if(str.indexOf(searchTerm) != -1){
+                ans.push(item);
+            }
+        })
+    }
+    return res.status(200).render('search', {
+        fileRows: ans,
+    });
+}
+    
