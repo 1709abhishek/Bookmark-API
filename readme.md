@@ -58,12 +58,12 @@ an API where anyone can upload a CSV file and show the data in it.
     │   ├── search.js
     │   ├── select.js
     └── api
-    ├── controllers
-    │   ├── homeController.js
-    ├── models
-    │   ├── Files.js
-    ├── routes
-        ├── index.js
+        ├── controllers
+        │   ├── homeController.js
+        ├── models
+        │   ├── Files.js
+        ├── routes
+            ├── index.js
 
 
 # Features
