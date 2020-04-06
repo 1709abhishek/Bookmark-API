@@ -1,6 +1,6 @@
 <ul>
     <% for( let index = 0; index < Files.length; index++ ) { %>
-      <a href="/<%- Files[index].filename %>">
+      <a href="/show/<% Files[index].id %>">
         <li><%- Files[index].filename %> </li>
       </a>
     <% } %>

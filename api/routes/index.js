@@ -18,7 +18,7 @@ router.get('/show-all', homeController.show);
 
 router.get('/show/:id', homeController.select);
 
-router.post('/search', homeController.search);
+router.post('/search/:id', homeController.search);
   
 
 

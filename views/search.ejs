@@ -9,6 +9,8 @@
     <title>CSV</title>
 </head>
 <body>
+    <% if (fileRows != null && fileRows.length > 0) { %>
+    <table class="table table-danger">
         <tbody>
             <% for( let index = 0; index < fileRows.length; index++ ) { %>
               <tr>

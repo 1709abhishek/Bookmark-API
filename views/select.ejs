@@ -10,9 +10,9 @@
 </head>
 <body>
     <% if (fileRows != null && fileRows.length > 0) { %>
-        <form class="m-5" method="POST" action="/search">
-          <input name="searchTerm" type="text" id="search_box" placeholder="">
-          <input id="filterBtn" type="submit" text="Search" class="btn btn-primary" class="ml-1">
+        <form class="m-5" method="POST" action="/search/<%= file_id %>">
+          <input name="searchTerm" type="text" id="search_box" placeholder="search <%= fileRows[0][1] %>">
+          <input id="filterBtn" type="submit" text="Search" class="btn btn-dark" class="ml-1">
         </form>
     <table class="table table-danger">
         <thead>
