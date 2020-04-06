@@ -1,4 +1,4 @@
-# MATDAAN -- Bookmark API
+# Bookmark API
 an API where anyone can upload a CSV file and show the data in it.
 
 
@@ -36,7 +36,7 @@ an API where anyone can upload a CSV file and show the data in it.
 4. open postman and visit localhost:8000/upload-csv
 5. upload csv file in body tag by selecting file.
 6. open browser and visit localhost:8000/show-all
-7. open browser and visit localhost:8000/show/:id (paste id).
+7. open browser and visit localhost:8000/show/:id (paste id) or click the link.
 8. enter something in search.
 9. data models are:
 --Files: filename
@@ -45,24 +45,25 @@ an API where anyone can upload a CSV file and show the data in it.
 
 # Project structure
 .
-├── index.js
-├── package.json
-├── config
-│   ├── mongoose.js
-├── tmp
-│   ├── csv
-│       ├── csv_files_stored_through_multe
-├── views
-│   ├── home.ejs
-│   ├── search.js
-│   └── select.js
-└── api
-    ├── controllers
-    │   ├── homeController.js
-    ├── models
-    │   ├── Files.js
-    ├── routes
-        ├── index.js
+
+    ├── index.js
+    ├── package.json
+    ├── config
+        ├── mongoose.js   
+    ├── tmp
+    │   ├── csv
+    │       ├── csv_files_stored_through_multe
+    ├── views
+    │   ├── home.ejs
+    │   ├── search.js
+    │   ├── select.js
+    └── api
+        ├── controllers
+        │   ├── homeController.js
+        ├── models
+        │   ├── Files.js
+        ├── routes
+            ├── index.js
 
 
 # Features
