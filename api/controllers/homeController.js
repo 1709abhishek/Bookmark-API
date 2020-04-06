@@ -112,9 +112,12 @@ module.exports.search = async function(req,res){
             // if(data.find(req.body.searchTerm)){
             //     fileRows.push(data); //push each row
             // }
-            if(data[1]==req.body.searchTerm){
-                fileRows.push(data);
+            if(searchTerm!=null){
+                if(data[1]==req.body.searchTerm){
+                    fileRows.push(data);
+                }
             }
+            fileRows.push(data);
         })
         .on("end", function () {
             console.log(fileRows);
