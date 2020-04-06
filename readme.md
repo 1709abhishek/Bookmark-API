@@ -45,23 +45,19 @@ an API where anyone can upload a CSV file and show the data in it.
 
 # Project structure
 .
-├── index.js
 
-├── package.json
-
-├── config
-    ├── mongoose.js
-
-├── tmp
-│   ├── csv
-│       ├── csv_files_stored_through_multe
-
-├── views
-│   ├── home.ejs
-│   ├── search.js
-│   └── select.js
-
-└── api
+    ├── index.js
+    ├── package.json
+    ├── config
+        ├── mongoose.js   
+    ├── tmp
+    │   ├── csv
+    │       ├── csv_files_stored_through_multe
+    ├── views
+    │   ├── home.ejs
+    │   ├── search.js
+    │   ├── select.js
+    └── api
     ├── controllers
     │   ├── homeController.js
     ├── models
