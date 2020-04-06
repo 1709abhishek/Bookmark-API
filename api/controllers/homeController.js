@@ -15,6 +15,19 @@ var storage = multer.diskStorage({
 const upload = multer({ dest: 'tmp/csv/' });
 const fs = require('fs');
 
+module.exports.index = function(req,res){
+    try {
+        return res.render('index', {
+            title: "home"
+        });
+    } catch (err) {
+        console.log('********',err);
+        return res.json(500, {
+            message: "Internal Server Error"
+        });
+    }
+}
+
 module.exports.upload = async function (req, res) {
     const fileRows = [];
     
@@ -31,7 +44,7 @@ module.exports.upload = async function (req, res) {
         var new_file = new Files({filename: req.file.path});
         let file = await new_file.save();
         return res.json(200, {
-            message: "File upload successful"
+            message: "file uploaded successfully"
         });
     } catch (err) {
         console.log('********',err);
