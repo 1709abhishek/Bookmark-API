@@ -117,7 +117,7 @@ module.exports.search = async function(req,res){
                     fileRows.push(data);
                 }
             }
-            fileRows.push(data);
+//             fileRows.push(data);
         })
         .on("end", function () {
             console.log(fileRows);
